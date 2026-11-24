@@ -75,11 +75,11 @@ img{
 }
 .msg-container{
     height:60px;
-    width: 250px;
+    width: 300px;
     border-radius: 20px;
     background-color: black;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     margin-left: 620px;
     margin-top: 20px;
     text-align: center;

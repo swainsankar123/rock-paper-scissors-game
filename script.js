@@ -25,22 +25,22 @@ const gencompchoice = ()=>{
      return option[random];
 }
 
-const drawgame= () => {
+const drawgame= (userchoice,compchoice) => {
     console.log("game was draw");
-    msg.innerText ="game was drw, play again";
+    msg.innerText =`game was drw ! userchoice ${userchoice} and comp ${compchoice} ` ;
 }
-const showwiner =(userwin) => {
+const showwiner =(userwin,userchoice,compchoice) => {
  console.log("showwiner function called");
     if(userwin){
         userscore++;
         userscorep.innerText=userscore;
-         msg.innerText="user win the match";
+         msg.innerText=`user win and user ${userchoice} beat comp ${compchoice}`;
          msg2.style.backgroundColor ="green";
           msg2.style.Color = "white";
     }else{
          compscore++; 
         compscorep.innerText=compscore;
-        msg.innerText= "comp win the match";
+        msg.innerText= `comp win and comp ${compchoice} beat  user ${userchoice}`;
         msg2.style.backgroundColor = "red";
          msg2.style.Color = "white";
     }
@@ -52,17 +52,18 @@ const playgame = (userchoice)=>{
   console.log("compchoice is ",compchoice);
   let userwin;
   if(userchoice === compchoice ){
-     drawgame();
+     drawgame(userchoice,compchoice);
+     return ;
   }else{
     if(userchoice === "paper"){
          userwin=compchoice === "scissor" ? false:true;
     }else if (userchoice === "rock"){
          userwin=compchoice === "paper" ? false:true;
     }else {
-         let userwin=compchoice == "rock" ? false:true;
+          userwin=compchoice == "rock" ? false:true;
     }
   }
-  showwiner(userwin);
+  showwiner(userwin,userchoice,compchoice);
 };
 
  choices.forEach((choice) => {
